@@ -1,4 +1,4 @@
-package android_printer_api;
+package android_printer;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
@@ -6,8 +6,6 @@ import org.apache.cordova.CallbackContext;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import com.example.util.PrintUtil;
 
 /**
  * This class echoes a string called from JavaScript.
