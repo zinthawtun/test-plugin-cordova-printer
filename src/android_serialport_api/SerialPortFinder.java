@@ -1,4 +1,5 @@
-package android_serialport_api;
+package hev.cordova.plugin.android_serialport_api;
+
 
 import android.util.Log;
 

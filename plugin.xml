@@ -1,16 +1,33 @@
 <?xml version='1.0' encoding='utf-8'?>
 <plugin id="cordova-android-printer-plugin" version="0.1.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
 <name>CAPrinter</name>
+
+<!-- <js module> -->
 <js-module name="CAPrinter" src="www/CAPrinter.js">
-<clobbers target="cordova.plugins.CAPrinter" />
+    <clobbers target="cordova.plugins.CAPrinter" />
 </js-module>
-<platform name="android">
-<config-file parent="/*" target="res/xml/config.xml">
-<feature name="CAPrinter">
-<param name="android-package" value="cordova-android-printer-plugin.CAPrinter" />
-</feature>
-</config-file>
-<config-file parent="/*" target="AndroidManifest.xml"></config-file>
-<source-file src="src/android_printer/CAPrinter.java" target-dir="src/cordova-android-printer-plugin/CAPrinter" />
-</platform>
+
+ <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="CAPrinter">
+                <param name="android-package" value="hev.cordova.android.printer.plugin.CAPrinter"/>
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml"></config-file>
+        </config-file>
+
+        <source-file src="src/android_printer/CAPrinter.java"
+            target-dir="src/hev/cordova/plugin" />
+
+        <source-file src="src/android_serialport_api/SerialPort.java"
+            target-dir="src/hev/cordova/plugin/android_serialport_api" />
+
+       <source-file src="src/android_serialport_api/SerialPortFinder.java"
+            target-dir="src/hev/cordova/plugin/android_serialport_api" />
+
+        <source-file src="src/com/example/util/PrintUtil.java"
+            target-dir="src/hev/cordova/plugin/util" />
+
+    </platform>
 </plugin>

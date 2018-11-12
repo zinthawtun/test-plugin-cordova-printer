@@ -1,4 +1,4 @@
-package com.example.util;
+package hev.cordova.plugin.PrintUtil;
 
 import java.io.File;
 import java.io.IOException;
@@ -8,8 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-import android_serialport_api.SerialPort;
-
+import hev.cordova.plugin.android_serialport_api.SerialPort;
 
 public class PrintUtil
 {
@@ -37,7 +36,7 @@ public class PrintUtil
 		byte[] arrayOfByte = null;
 		try 
 		{
-			arrayOfByte = paramString.getBytes("GBK");  //±ØÐë·ÅÔÚtryÄÚ²Å¿ÉÒÔ
+			arrayOfByte = paramString.getBytes("GBK");  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½tryï¿½Ú²Å¿ï¿½ï¿½ï¿½
 		}
 		catch (Exception   ex) {
 			;
@@ -46,31 +45,31 @@ public class PrintUtil
     	
     }
 
-    public static byte[] CutPaper()   //ÇÐÖ½£» GS V 66D 0D
+    public static byte[] CutPaper()   //ï¿½ï¿½Ö½ï¿½ï¿½ GS V 66D 0D
     {
       byte[] arrayOfByte =  new byte[] {0x1D, 0x56, 0x42, 0x00}; 
       return arrayOfByte;
     }
 
-    public static byte[] PrintBarcode(String paramString) //ÌõÂë GS k
+    public static byte[] PrintBarcode(String paramString) //ï¿½ï¿½ï¿½ï¿½ GS k
     {
       byte[] arrayOfByte = new byte[13 + paramString.length()];
-      //ÉèÖÃÌõÂë¸ß¶È
+      //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß¶ï¿½
       arrayOfByte[0] = 0x1D;
       arrayOfByte[1] = 'h';
-      arrayOfByte[2] = 0x60; //1µ½255
+      arrayOfByte[2] = 0x60; //1ï¿½ï¿½255
      
-      //ÉèÖÃÌõÂë¿í¶È
+      //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
       arrayOfByte[3] = 0x1D;
       arrayOfByte[4] = 'w';
-      arrayOfByte[5] = 2; //2µ½6
+      arrayOfByte[5] = 2; //2ï¿½ï¿½6
       
-      //ÉèÖÃÌõÂëÎÄ×Ö´òÓ¡Î»ÖÃ
+      //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½Ó¡Î»ï¿½ï¿½
       arrayOfByte[6] = 0x1D;
       arrayOfByte[7] = 'H';
-      arrayOfByte[8] = 2; //0µ½3
+      arrayOfByte[8] = 2; //0ï¿½ï¿½3
       
-      //´òÓ¡39ÌõÂë
+      //ï¿½ï¿½Ó¡39ï¿½ï¿½ï¿½ï¿½
       arrayOfByte[9] = 0x1D;
       arrayOfByte[10] = 'k';
       arrayOfByte[11] = 0x45;
@@ -79,13 +78,13 @@ public class PrintUtil
       return arrayOfByte;
     }
     
-    public static byte[] setAlignCenter(char paramChar) //¶ÔÆë ESC a
+    public static byte[] setAlignCenter(char paramChar) //ï¿½ï¿½ï¿½ï¿½ ESC a
     {
 		byte[] arrayOfByte = new byte[3]; 
 		arrayOfByte[0] = 0x1B;
 		arrayOfByte[1] = 0x61;
 		
-		switch(paramChar)	//1-×ó¶ÔÆë£»2-¾ÓÖÐ¶ÔÆë£»3-ÓÒ¶ÔÆë
+		switch(paramChar)	//1-ï¿½ï¿½ï¿½ï¿½ë£»2-ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½ë£»3-ï¿½Ò¶ï¿½ï¿½ï¿½
 		{
 			case '2':
 				arrayOfByte[2] = 0x01;
@@ -100,12 +99,12 @@ public class PrintUtil
 		return arrayOfByte;
     }
 
-    public static byte[] setBold(boolean paramBoolean)  //¼Ó´Ö ESC E
+    public static byte[] setBold(boolean paramBoolean)  //ï¿½Ó´ï¿½ ESC E
     {
       byte[] arrayOfByte = new byte[3]; 
       arrayOfByte[0] = 0x1B;
       arrayOfByte[1] = 0x45;
-      if (paramBoolean)				//±íÊ¾¼Ó´Ö
+      if (paramBoolean)				//ï¿½ï¿½Ê¾ï¿½Ó´ï¿½
       {  
     	  arrayOfByte[2] = 0x01;
       }
@@ -116,7 +115,7 @@ public class PrintUtil
       return arrayOfByte;
      }
     
-    public static byte[] setLineH(int h)  //ÉèÖÃÐÐ¸ß£¬h 0-255
+    public static byte[] setLineH(int h)  //ï¿½ï¿½ï¿½ï¿½ï¿½Ð¸ß£ï¿½h 0-255
     {
       byte[] arrayOfByte = new byte[3]; 
       arrayOfByte[0] = 0x1B;
@@ -125,13 +124,13 @@ public class PrintUtil
       return arrayOfByte;
      }
 
-    public static byte[] setWH(char paramChar) //GS ! ÉèÖÃ´òÓ¡×Ö·û´óÐ¡
+    public static byte[] setWH(char paramChar) //GS ! ï¿½ï¿½ï¿½Ã´ï¿½Ó¡ï¿½Ö·ï¿½ï¿½ï¿½Ð¡
     {
-		byte[] arrayOfByte = new byte[3]; //GS ! 11H ±¶¿í±¶¸ß		
+		byte[] arrayOfByte = new byte[3]; //GS ! 11H ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½		
 		arrayOfByte[0] = 0x1D;
 		arrayOfByte[1] = 0x21;
 		
-		switch(paramChar)	//1-ÎÞ£»2-±¶¿í£»3-±¶¸ß£» 4-±¶¿í±¶¸ß
+		switch(paramChar)	//1-ï¿½Þ£ï¿½2-ï¿½ï¿½ï¿½ï¿½3-ï¿½ï¿½ï¿½ß£ï¿½ 4-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		{
 			case '2':
 				arrayOfByte[2] = 0x10;
@@ -151,18 +150,18 @@ public class PrintUtil
     }
 	 /***************************************************************************
 		    add by yidie   2012-01-10     
-		         ¹¦ÄÜ£ºÉèÖÃ´òÓ¡¾ø¶ÔÎ»ÖÃ
-		         ²ÎÊý£º
-		         int				ÔÚµ±Ç°ÐÐ£¬¶¨Î»¹â±êÎ»ÖÃ£¬È¡Öµ·¶Î§0ÖÁ576µã
-		         ËµÃ÷£º
-				ÔÚ×ÖÌå³£¹æ´óÐ¡ÏÂ£¬Ã¿ºº×Ö24µã£¬Ó¢ÎÄ×Ö·û12µã
-				ÈçÎ»ÓÚµÚn¸öºº×Öºó£¬Ôòposition=24*n
-				ÈçÎ»ÓÚµÚn¸ö°ë½Ç×Ö·ûºó£¬Ôòposition=12*n
+		         ï¿½ï¿½ï¿½Ü£ï¿½ï¿½ï¿½ï¿½Ã´ï¿½Ó¡ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½
+		         ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		         int				ï¿½Úµï¿½Ç°ï¿½Ð£ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½Î»ï¿½Ã£ï¿½È¡Öµï¿½ï¿½Î§0ï¿½ï¿½576ï¿½ï¿½
+		         Ëµï¿½ï¿½ï¿½ï¿½
+				ï¿½ï¿½ï¿½ï¿½ï¿½å³£ï¿½ï¿½ï¿½Ð¡ï¿½Â£ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½24ï¿½ã£¬Ó¢ï¿½ï¿½ï¿½Ö·ï¿½12ï¿½ï¿½
+				ï¿½ï¿½Î»ï¿½Úµï¿½nï¿½ï¿½ï¿½ï¿½ï¿½Öºï¿½ï¿½ï¿½position=24*n
+				ï¿½ï¿½Î»ï¿½Úµï¿½nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½position=12*n
 	  ****************************************************************************/   
     
 	public static byte[] setCusorPosition(int position)
 	{
-		byte[] returnText = new byte[4]; //µ±Ç°ÐÐ£¬ÉèÖÃ¾ø¶Ô´òÓ¡Î»ÖÃ ESC $ bL bH
+		byte[] returnText = new byte[4]; //ï¿½ï¿½Ç°ï¿½Ð£ï¿½ï¿½ï¿½ï¿½Ã¾ï¿½ï¿½Ô´ï¿½Ó¡Î»ï¿½ï¿½ ESC $ bL bH
 		returnText[0] = 0x1B;
 		returnText[1] = 0x24;
 		returnText[2]=(byte)(position%256);
@@ -234,7 +233,7 @@ public class PrintUtil
 			System.arraycopy(oldText, 0,  printText,  iNum,  oldText.length);
 			iNum += oldText.length;
 					
-			oldText=getGbk("¶©µ¥ºÅ£º");
+			oldText=getGbk("ï¿½ï¿½ï¿½ï¿½ï¿½Å£ï¿½");
 			System.arraycopy(oldText, 0,  printText,  iNum,  oldText.length);
 			iNum += oldText.length;
 
@@ -255,7 +254,7 @@ public class PrintUtil
 			iNum += oldText.length;
 			
 			strTmp=new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.SIMPLIFIED_CHINESE).format(new Date());
-			oldText=getGbk(strTmp+"´òÓ¡\n\n");
+			oldText=getGbk(strTmp+"ï¿½ï¿½Ó¡\n\n");
 			System.arraycopy(oldText, 0,  printText,  iNum,  oldText.length);
 			iNum += oldText.length;
 			
@@ -271,7 +270,7 @@ public class PrintUtil
 			System.arraycopy(oldText, 0, printText,  iNum,  oldText.length);
 			iNum += oldText.length;
 			
-			oldText = getGbk("´¨ÌïÌåÑéµê");
+			oldText = getGbk("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 			System.arraycopy(oldText, 0, printText,  iNum,  oldText.length);
 			iNum += oldText.length;
 
@@ -296,15 +295,15 @@ public class PrintUtil
 			iNum += oldText.length;
 			
 			strTmp=new SimpleDateFormat("yyyy-MM-dd", Locale.SIMPLIFIED_CHINESE).format(new Date());
-			oldText = getGbk("ÍâËÍÊ±¼ä£º"+strTmp+" ¾¡¿ìËÍ´ï\n");
+			oldText = getGbk("ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ä£º"+strTmp+" ï¿½ï¿½ï¿½ï¿½ï¿½Í´ï¿½\n");
 			System.arraycopy(oldText, 0, printText,  iNum,  oldText.length);
 			iNum += oldText.length;
 
-			oldText = getGbk("ÍâËÍµØÖ·£º¸ßÐÂÇø¿Æ¼¼ÖÐÂ·6ºÅ´´Òµ´óÏÃ\n");
+			oldText = getGbk("ï¿½ï¿½ï¿½Íµï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¼ï¿½ï¿½ï¿½Â·6ï¿½Å´ï¿½Òµï¿½ï¿½ï¿½ï¿½\n");
 			System.arraycopy(oldText, 0, printText,  iNum,  oldText.length);
 			iNum += oldText.length;
 			
-			oldText = getGbk("³Æºôµç»°£ºÕÅÈý·áÏÈÉú 13501234567\n");
+			oldText = getGbk("ï¿½Æºï¿½ç»°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 13501234567\n");
 			System.arraycopy(oldText, 0, printText,  iNum,  oldText.length);
 			iNum += oldText.length;
 			
@@ -312,7 +311,7 @@ public class PrintUtil
 			System.arraycopy(oldText, 0, printText,  iNum,  oldText.length);
 			iNum += oldText.length;
 
-			oldText = getGbk("        Æ·Ãû            µ¥¼Û    ÊýÁ¿    ½ð¶î\n");
+			oldText = getGbk("        Æ·ï¿½ï¿½            ï¿½ï¿½ï¿½ï¿½    ï¿½ï¿½ï¿½ï¿½    ï¿½ï¿½ï¿½\n");
 			System.arraycopy(oldText, 0, printText,  iNum,  oldText.length);
 			iNum += oldText.length;
 			
@@ -323,9 +322,9 @@ public class PrintUtil
 			oldText = setWH('3'); 
 			System.arraycopy(oldText, 0, printText,  iNum,  oldText.length);
 			iNum += oldText.length;
-			//²ËÆ·Ãû×î¶à10¸öºº×Ö£¨20¸ö×Ö·û£©£»µ¥¼Û×î¶à8¸ö×Ö·û£»ÊýÁ¿×î¶à4¸ö×Ö·û£»½ð¶î×î¶à8¸ö×Ö·û£»ÖÐ¼ä·Ö¸ô¸÷2¸ö¿Õ¸ñ
+			//ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½10ï¿½ï¿½ï¿½ï¿½ï¿½Ö£ï¿½20ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½8ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½4ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½8ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½Ð¼ï¿½Ö¸ï¿½ï¿½2ï¿½ï¿½ï¿½Õ¸ï¿½
 			
-			strTmp="²ÝÝ®ËáÄÌ²¼µé";			
+			strTmp="ï¿½ï¿½Ý®ï¿½ï¿½ï¿½Ì²ï¿½ï¿½ï¿½";			
 			oldText=getGbk(strTmp);
 			System.arraycopy(oldText, 0,  printText,  iNum,  oldText.length);
 			iNum += oldText.length;
@@ -339,7 +338,7 @@ public class PrintUtil
 			System.arraycopy(oldText, 0,  printText,  iNum,  oldText.length);
 			iNum += oldText.length;
 			
-			strTmp="ËáÄÌË®¹û¼ÐÐÄÃæ°ü";
+			strTmp="ï¿½ï¿½ï¿½ï¿½Ë®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 			oldText=getGbk(strTmp);
 			System.arraycopy(oldText, 0,  printText,  iNum,  oldText.length);
 			iNum += oldText.length;
@@ -353,7 +352,7 @@ public class PrintUtil
 			System.arraycopy(oldText, 0,  printText,  iNum,  oldText.length);
 			iNum += oldText.length;
 			
-			strTmp="ËÖÆ¤Ö¥Ê¿Ãæ°ü";			
+			strTmp="ï¿½ï¿½Æ¤Ö¥Ê¿ï¿½ï¿½ï¿½";			
 			oldText=getGbk(strTmp);
 			System.arraycopy(oldText, 0,  printText,  iNum,  oldText.length);
 			iNum += oldText.length;
@@ -367,7 +366,7 @@ public class PrintUtil
 			System.arraycopy(oldText, 0,  printText,  iNum,  oldText.length);
 			iNum += oldText.length;
 			
-			strTmp="Ïã³ÈÈíÌÒµ°¸â";			
+			strTmp="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òµï¿½ï¿½ï¿½";			
 			oldText=getGbk(strTmp);
 			System.arraycopy(oldText, 0,  printText,  iNum,  oldText.length);
 			iNum += oldText.length;
@@ -393,7 +392,7 @@ public class PrintUtil
 			System.arraycopy(oldText, 0, printText,  iNum,  oldText.length);
 			iNum += oldText.length;
 			
-			strTmp="ËÍ²Í·Ñ£º";			
+			strTmp="ï¿½Í²Í·Ñ£ï¿½";			
 			oldText=getGbk(strTmp);
 			System.arraycopy(oldText, 0,  printText,  iNum,  oldText.length);
 			iNum += oldText.length;
@@ -407,7 +406,7 @@ public class PrintUtil
 			System.arraycopy(oldText, 0,  printText,  iNum,  oldText.length);
 			iNum += oldText.length;
 			
-			strTmp="×Ü¼Æ£º";			
+			strTmp="ï¿½Ü¼Æ£ï¿½";			
 			oldText=getGbk(strTmp);
 			System.arraycopy(oldText, 0,  printText,  iNum,  oldText.length);
 			iNum += oldText.length;
@@ -421,7 +420,7 @@ public class PrintUtil
 			System.arraycopy(oldText, 0,  printText,  iNum,  oldText.length);
 			iNum += oldText.length;
 			
-			oldText = getGbk("±¸×¢£ºÇë¼ÓËÍÒ»´ÎÐÔµ¶²æ\n");
+			oldText = getGbk("ï¿½ï¿½×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ôµï¿½ï¿½ï¿½\n");
 			System.arraycopy(oldText, 0, printText,  iNum,  oldText.length);
 			iNum += oldText.length;
 			
