@@ -11,6 +11,6 @@
 </feature>
 </config-file>
 <config-file parent="/*" target="AndroidManifest.xml"></config-file>
-<source-file src="src/android/CAPrinter.java" target-dir="src/cordova-android-printer-plugin/CAPrinter" />
+<source-file src="src/android_printer/CAPrinter.java" target-dir="src/cordova-android-printer-plugin/CAPrinter" />
 </platform>
 </plugin>
