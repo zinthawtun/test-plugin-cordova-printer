@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-android-printer-plugin" version="0.1.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+<name>CAPrinter</name>
+<js-module name="CAPrinter" src="www/CAPrinter.js">
+<clobbers target="cordova.plugins.CAPrinter" />
+</js-module>
+<platform name="android">
+<config-file parent="/*" target="res/xml/config.xml">
+<feature name="CAPrinter">
+<param name="android-package" value="cordova-android-printer-plugin.CAPrinter" />
+</feature>
+</config-file>
+<config-file parent="/*" target="AndroidManifest.xml"></config-file>
+<source-file src="src/android/CAPrinter.java" target-dir="src/cordova-android-printer-plugin/CAPrinter" />
+</platform>
+</plugin>
