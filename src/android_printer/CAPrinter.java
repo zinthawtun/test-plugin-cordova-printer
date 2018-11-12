@@ -2,6 +2,7 @@ package android_printer;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
+import org.apache.cordova.CordovaWebView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -19,6 +20,7 @@ public class CAPrinter extends CordovaPlugin {
         if (action.equals("fastPrint")) {
             String message = args.getString(0);
             this.fastPrint(message, callbackContext);
+            webView.loadUrl("javascript:alert('hello this is clicked');");
             return true;
         }
         return false;
