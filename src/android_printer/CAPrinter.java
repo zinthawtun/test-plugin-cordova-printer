@@ -7,6 +7,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.example.util.PrintUtil;
+
 /**
  * This class echoes a string called from JavaScript.
  */
@@ -22,7 +24,7 @@ public class CAPrinter extends CordovaPlugin {
         return false;
     }
 
-    private void fastPrint(String message, CallbackContext callbackContext) {
+    private void fastPrintd(String message, CallbackContext callbackContext) {
         if (message != null && message.length() > 0) {
             callbackContext.success(message);
         } else {
