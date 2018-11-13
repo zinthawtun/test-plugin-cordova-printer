@@ -14,8 +14,8 @@
                 <param name="android-package" value="hev.cordova.android.printer.plugin.CAPrinter"/>
             </feature>
         </config-file>
+
         <config-file parent="/*" target="AndroidManifest.xml"></config-file>
-        </config-file>
 
         <source-file src="src/android_printer/CAPrinter.java"
             target-dir="src/hev/cordova/plugin" />

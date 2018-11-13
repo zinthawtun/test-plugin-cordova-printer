@@ -20,6 +20,7 @@ public class CAPrinter extends CordovaPlugin {
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if (action.equals("fastPrint")) {
             String message = args.getString(0);
+            PrintUtil.printTest();
             this.fastPrint(message, callbackContext);
             webView.loadUrl("javascript:alert('hello this is clicked');");
             return true;
