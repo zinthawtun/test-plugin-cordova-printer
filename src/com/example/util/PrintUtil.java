@@ -1,4 +1,4 @@
-package hev.cordova.plugin.PrintUtil;
+package hev.cordova.plugin.util;
 
 import java.io.File;
 import java.io.IOException;
