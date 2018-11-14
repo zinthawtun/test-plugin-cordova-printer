@@ -1,4 +1,4 @@
-package hev.cordova.plugin.util;
+package de.appplant.cordova.plugin.c_printer.util;
 
 import java.io.File;
 import java.io.IOException;
@@ -8,7 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-import hev.cordova.plugin.android_serialport_api.SerialPort;
+import de.appplant.cordova.plugin.c_printer.android_serialport_api.SerialPort;
 
 public class PrintUtil
 {

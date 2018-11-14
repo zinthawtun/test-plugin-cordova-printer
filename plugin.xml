@@ -12,7 +12,7 @@
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="CAPrinter">
-                <param name="android-package" value="hev.cordova.android.printer.plugin.CAPrinter"/>
+                <param name="android-package" value="de.appplant.cordova.plugin.c_printer.CAPrinter"/>
             </feature>
         </config-file>
 
@@ -20,18 +20,27 @@
         </config-file>
 
         <source-file src="src/android_printer/CAPrinter.java"
-            target-dir="src/hev/cordova/plugin" />
+            target-dir="src/de/appplant/cordova/plugin/c_printer" />
 
         <source-file src="src/android_serialport_api/SerialPort.java"
-            target-dir="src/hev/cordova/plugin/android_serialport_api" />
+            target-dir="src/de/appplant/cordova/plugin/c_printer/android_serialport_api" />
 
        <source-file src="src/android_serialport_api/SerialPortFinder.java"
-            target-dir="src/hev/cordova/plugin/android_serialport_api" />
+            target-dir="src/de/appplant/cordova/plugin/c_printer/android_serialport_api" />
 
         <source-file src="src/com/example/util/PrintUtil.java"
-            target-dir="src/hev/cordova/plugin/util" />
+            target-dir="src/de/appplant/cordova/plugin/c_printer/util" />
+
+        <lib-file src="src/libs/armeabi/libserial_port.so" arch="device" />
+
+        <lib-file src="src/libs/armeabi-v7a/libserial_port.so" arch="device" />
+
+        <lib-file src="src/libs/x86/libserial_port.so" arch="device" />
+
+        <lib-file src="src/libs/android-support-v4.jar" arch="device" />
+
+        <lib-file src="src/libs/umeng_sdk.jar" arch="device" />
 
     </platform>
-
 
 </plugin>

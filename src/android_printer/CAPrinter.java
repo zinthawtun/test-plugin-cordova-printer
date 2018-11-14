@@ -1,4 +1,4 @@
-package hev.cordova.plugin;
+package de.appplant.cordova.plugin.c_printer.CAPrinter;
 
 
 import org.apache.cordova.CordovaPlugin;
@@ -9,7 +9,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import hev.cordova.plugin.util.PrintUtil;
+import de.appplant.cordova.plugin.c_printer.util.PrintUtil;
 
 /**
  * This class echoes a string called from JavaScript.

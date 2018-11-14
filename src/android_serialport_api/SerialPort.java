@@ -1,4 +1,4 @@
-package hev.cordova.plugin.android_serialport_api;
+package de.appplant.cordova.plugin.c_printer.android_serialport_api;
 
 import android.util.Log;
 
