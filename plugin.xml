@@ -13,7 +13,6 @@
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="CAPrinter">
                 <param name="android-package" value="de.appplant.cordova.plugin.c_printer.CAPrinter"/>
-                <param name="onload" value="true" />
             </feature>
         </config-file>
 

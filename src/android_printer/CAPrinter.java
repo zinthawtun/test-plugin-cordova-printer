@@ -21,14 +21,14 @@ public class CAPrinter extends CordovaPlugin {
         if (action.equals("fastPrint")) {
             String message = args.getString(0);
             PrintUtil.printTest();
-            this.fastPrint(message, callbackContext);
+            this.checkPrint(message, callbackContext);
             webView.loadUrl("javascript:window.alert('hello this is clicked');");
             return true;
         }
         return false;
     }
 
-    private void fastPrint(String message, CallbackContext callbackContext) {
+    private void checkPrint(String message, CallbackContext callbackContext) {
         if (message != null && message.length() > 0) {
             callbackContext.success(message);
         } else {
