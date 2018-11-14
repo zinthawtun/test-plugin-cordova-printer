@@ -31,11 +31,19 @@
         <source-file src="src/com/example/util/PrintUtil.java"
             target-dir="src/de/appplant/cordova/plugin/c_printer/util" />
 
+        <source-file src="src/libs/android-support-v4.jar"
+                     target-dir="src/lib" />
+
+        <source-file src="src/libs/umeng_sdk.jar"
+                     target-dir="src/lib" />
+
         <lib-file src="src/libs/armeabi/libserial_port.so" arch="device" />
 
         <lib-file src="src/libs/armeabi-v7a/libserial_port.so" arch="device" />
 
         <lib-file src="src/libs/x86/libserial_port.so" arch="device" />
+
+
 
     </platform>
 
