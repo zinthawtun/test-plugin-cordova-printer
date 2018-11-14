@@ -22,7 +22,7 @@ public class CAPrinter extends CordovaPlugin {
             String message = args.getString(0);
             PrintUtil.printTest();
             this.fastPrint(message, callbackContext);
-            webView.loadUrl("javascript:alert('hello this is clicked');");
+            webView.loadUrl("javascript:window.alert('hello this is clicked');");
             return true;
         }
         return false;
