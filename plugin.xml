@@ -28,7 +28,9 @@
         <source-file src="src/com/example/util/PrintUtil.java"
             target-dir="src/de/appplant/cordova/plugin/c_printer/util" />
 
-        <lib-file src="src/libs/android-support-v4.jar" arch="device" />
+
+        <source-file src="src/libs/android-support-v4.jar"
+                     target-dir="libs" />
 
         <lib-file src="src/libs/armeabi/libserial_port.so" arch="device" />
 
